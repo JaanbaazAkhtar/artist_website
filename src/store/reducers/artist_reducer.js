@@ -1,6 +1,7 @@
 import{
     GET_ARTISTS_ALL,
-    GET_ARTISTS_SEARCH
+    GET_ARTISTS_SEARCH,
+    GET_ARTIST_DETAIL
 } from '../types';
 
 import { GET_ARTISTS_ALL } from "../../types";
@@ -11,6 +12,8 @@ export default function(state={}, action){
             return {...state, artistList:action.payload}
         case GET_ARTISTS_SEARCH:
             return {...state, artistList:action.payload}
+            case GET_ARTIST_DETAIL:
+                return {...state, artistData:action.payload}
         default:
             return state;
     }

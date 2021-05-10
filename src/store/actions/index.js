@@ -1,6 +1,7 @@
 import{
     GET_ARTISTS_ALL,
-    GET_ARTISTS_SEARCH
+    GET_ARTISTS_SEARCH,
+    GET_ARTIST_DETAIL
 } from '../types';
 
 import axios from 'axios';
@@ -22,4 +23,12 @@ export function ArtistListSerach(keywords){
         payload: request
     }
                     
+}
+
+export function artistDetail(id){
+    const request = axios.get(`${URL}/artists?id=${id}`).then(response => response.data)
+    return {
+        type: GET_ARTIST_DETAIL,
+        payload: request
+    }
 }
